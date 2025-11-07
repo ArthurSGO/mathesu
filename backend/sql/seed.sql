@@ -1,0 +1,1 @@
+INSERT INTO users (name,email,password,role) VALUES ('Administrador','admin@empresa.com','admin123','admin'); -- senha: admin123

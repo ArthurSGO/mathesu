@@ -1,0 +1,6 @@
+const t=localStorage.getItem('token'); if(!t) location.replace('login.html'); const H={'Authorization':'Bearer '+t,'Content-Type':'application/json'};
+function logout(){ localStorage.removeItem('token'); location.replace('login.html'); }
+async function listar(){ const r=await fetch('http://localhost:3001/api/empresas/list',{headers:H}); const {items}=await r.json(); render(items); }
+async function buscar(){ const q=document.getElementById('q').value.trim(); const s=document.getElementById('status').value; const r=await fetch('http://localhost:3001/api/empresas/search?q='+encodeURIComponent(q)+'&status='+encodeURIComponent(s),{headers:H}); const {items}=await r.json(); render(items); }
+function render(items){ const tb=document.querySelector('#tabela tbody'); tb.innerHTML=''; (items||[]).forEach(i=>{ const tr=document.createElement('tr'); tr.innerHTML=`<td>${i.id}</td><td>${i.fantasy_name||''}</td><td>${i.cnpj||''}</td><td>${i.city||''}</td><td>${i.state||''}</td><td>${i.sector||''}</td><td>${i.status}</td><td>${new Date(i.updated_at).toLocaleString()}</td>`; tb.appendChild(tr); }); }
+listar();

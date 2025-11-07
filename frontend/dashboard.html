@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard • Sistema de Propostas</title>
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head><body>
+<header class="topbar">
+  <div class="brand">Sistema de Propostas</div>
+  <nav class="tabs">
+    <a class="tab active" href="dashboard.html">Dashboard</a>
+    <a class="tab" href="empresas.html">Empresas</a>
+    <a class="tab" href="pendencias.html">Pendências</a>
+    <a class="tab" href="configuracoes.html">Configurações</a>
+  </nav>
+  <div class="userbox"><button class="ghost" onclick="logout()">Sair</button></div>
+</header>
+<main class="wrap">
+  <section class="grid2">
+    <div class="panel"><h3>Total de Usuários</h3><div id="kpiUsers" class="kpi">0</div></div>
+    <div class="panel"><h3>Total de Empresas</h3><div id="kpiCompanies" class="kpi">0</div></div>
+  </section>
+  <section class="panel"><h3>Últimas edições</h3><ul id="recentList" class="list"><li>—</li></ul></section>
+</main>
+<script src="js/dashboard.js"></script>
+</body></html>

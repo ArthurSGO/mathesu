@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empresas • Sistema de Propostas</title>
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/empresas.css">
+</head><body>
+<header class="topbar">
+  <div class="brand">Sistema de Propostas</div>
+  <nav class="tabs">
+    <a class="tab" href="dashboard.html">Dashboard</a>
+    <a class="tab active" href="empresas.html">Empresas</a>
+    <a class="tab" href="pendencias.html">Pendências</a>
+    <a class="tab" href="configuracoes.html">Configurações</a>
+  </nav>
+  <div class="userbox"><button class="ghost" onclick="logout()">Sair</button></div>
+</header>
+<main class="wrap">
+  <section class="panel">
+    <h3>Pesquisar</h3>
+    <div class="grid2">
+      <input id="q" placeholder="Nome/CNPJ/Cidade">
+      <select id="status"><option value="">Todos</option><option value="pendente">Pendente</option><option value="ativo">Ativo</option><option value="inativo">Inativo</option></select>
+    </div>
+    <button class="primary" onclick="buscar()">Buscar</button>
+    <button onclick="listar()">Listar recentes</button>
+  </section>
+  <section class="panel">
+    <h3>Empresas</h3>
+    <table id="tabela"><thead><tr><th>ID</th><th>Nome</th><th>CNPJ</th><th>Cidade</th><th>UF</th><th>Setor</th><th>Status</th><th>Atualizado</th></tr></thead><tbody><tr><td colspan="8">—</td></tr></tbody></table>
+  </section>
+</main>
+<script src="js/empresas.js"></script>
+</body></html>
