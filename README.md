@@ -52,9 +52,14 @@ O servidor sobe em `http://localhost:3001` por padrão e expõe os endpoints RES
 
 ## Frontend
 
-Sirva a pasta `public` por HTTP (ex.: `npx serve public`, nginx, Apache ou o servidor estático do próprio framework).
+A API já expõe os arquivos estáticos contidos em `public`. Após iniciar o servidor (`npm start`), acesse:
 
-Página inicial de login: `http://localhost:3000/login.html` (ajuste conforme host utilizado).
+- `http://localhost:3001/` → redireciona para `login.html`
+- `http://localhost:3001/dashboard.html`
+- `http://localhost:3001/pendencias.html`
+
+Caso deseje servir o frontend separadamente (por exemplo, em outro domínio), basta disponibilizar o conteúdo da pasta `public` e
+configurar o proxy/CORS apontando para o backend em `http://localhost:3001`.
 
 ### Login seed
 
